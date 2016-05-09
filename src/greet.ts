@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const greeting = (message: string) => console.log(`Hello ${message}`)
 

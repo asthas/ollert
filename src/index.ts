@@ -1,5 +1,5 @@
-'use strict';
+'use strict'
 
-import greeting from './greet';
+import greeting from './greet'
 
 greeting('World')
