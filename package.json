@@ -4,16 +4,17 @@
   "description": "A trello like board made in TS",
   "main": "build/main.js",
   "scripts": {
-    "build": "true",
+    "build": "webpack",
     "serve": "lite-server",
     "start": "npm run build && npm run serve",
-    "dev": "nodemon -x 'npm run build' --watch src -e ts"
+    "dev":   "webpack -w"
   },
   "author": "Astha Sharma <a@astha.me>",
   "license": "MIT",
   "devDependencies": {
     "lite-server": "^2.2.0",
-    "nodemon": "^1.9.2",
+    "ts-loader": "^0.8.2",
+    "webpack": "^1.13.0"
   },
   "dependencies": {
     "node-uuid": "^1.4.7"
