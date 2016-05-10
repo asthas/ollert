@@ -3,6 +3,7 @@
 import { v4 as uuid } from 'node-uuid'
 
 import User from '../user/model'
+import Task from '../task/model'
 
 class Card {
     id: string
@@ -10,7 +11,7 @@ class Card {
     owner: User
     order: number
     created_at: Date
-    tasks: any[]
+    tasks: Task[]
 
     constructor(title: string, owner: User, order: number){
         this.id = uuid()
