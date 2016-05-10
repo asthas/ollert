@@ -3,10 +3,10 @@
 import CardList from '../cardlist/model'
 
 class Board {
-    cardList: CardList
+    cardLists: CardList[]
 
     constructor() {
-        this.cardList = new CardList('Demo list')
+        this.cardLists = [new CardList('Demo list')]
     }
 }
 
