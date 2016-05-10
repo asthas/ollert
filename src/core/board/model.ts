@@ -5,8 +5,8 @@ import CardList from '../cardlist/model'
 class Board {
     cardLists: CardList[]
 
-    constructor() {
-        this.cardLists = [new CardList('Demo list')]
+    constructor(cardLists?: CardList[]) {
+        this.cardLists =  cardLists ? cardLists : [new CardList('Demo list')]
     }
 }
 
