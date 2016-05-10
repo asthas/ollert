@@ -5,8 +5,18 @@
     height: 100vh;
 }
 
-.card-list {
-    background-color: #ecf0f1;
-    margin: 8px;
+.cardlist{
+    background: #82B1FF;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 20px;
+    width: 16em;
+    padding: 12px;
+}
+.card{
+    background: #fafafa;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin-bottom: 10px;
     padding: 8px;
 }
