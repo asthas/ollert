@@ -1,4 +1,6 @@
-const typescript = require('rollup-plugin-typescript')
+'use strict'
+
+const typescript  = require('rollup-plugin-typescript')
 
 module.exports = {
   entry: 'src/index.ts',

@@ -19,3 +19,5 @@ class Card {
         this.created_at = new Date()
     }
 }
+
+export default Card
