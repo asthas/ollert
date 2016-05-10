@@ -4,7 +4,7 @@
   "description": "A trello like board made in TS",
   "main": "build/main.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "true",
     "serve": "lite-server",
     "start": "npm run build && npm run serve",
     "dev": "nodemon -x 'npm run build' --watch src -e ts"
@@ -14,8 +14,6 @@
   "devDependencies": {
     "lite-server": "^2.2.0",
     "nodemon": "^1.9.2",
-    "rollup": "^0.26.2",
-    "rollup-plugin-typescript": "^0.7.5"
   },
   "dependencies": {
     "node-uuid": "^1.4.7"
