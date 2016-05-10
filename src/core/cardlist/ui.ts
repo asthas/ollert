@@ -5,6 +5,7 @@ import renderCard from '../card/ui'
 
 const render = (cardList: CardList): HTMLElement => {
     const listContainer = document.createElement('div')
+    listContainer.className = 'card-list'
 
     const listTitle = document.createElement('h1')
     listTitle.innerText = cardList.title

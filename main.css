@@ -1,5 +1,12 @@
 #board {
     background-color: #2980b9;
+    padding: 8px;
     display: flex;
     height: 100vh;
+}
+
+.card-list {
+    background-color: #ecf0f1;
+    margin: 8px;
+    padding: 8px;
 }
