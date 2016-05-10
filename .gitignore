@@ -38,3 +38,7 @@ jspm_packages
 
 # TS build folder
 build
+
+# Node Typings
+typings/main
+typings/main.d.ts
