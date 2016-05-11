@@ -2,9 +2,9 @@
 
 import board from '../core/board/model'
 
-function storageAvailable(type) {
+function storageAvailable() {
 	try {
-		var storage = window[type],
+		var storage = window.localStorage,
 			x = '__storage_test__';
 		storage.setItem(x, x);
 		storage.removeItem(x);
@@ -15,9 +15,21 @@ function storageAvailable(type) {
 	}
 }
 
-if (storageAvailable('localStorage')) {
-	localStorage.setItem('board', JSON.stringify(board))
+
+
+const storage = {
+    saveInstance(board: board){
+        if (storageAvailable()) {
+             window.localStorage.setItem('board', JSON.stringify(board))
+        }
+    },
+
+    readInstance(board: string){
+        if (storageAvailable()) {
+            JSON.parse(window.localStorage.getItem('board'))
+        }
+        return null
+    }
 }
-else {
-	console.log("localStorage unavailable!")
-}
+
+export default storage
