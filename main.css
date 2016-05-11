@@ -4,7 +4,6 @@
     width: 100%;
     height: 100vh;
 }
-
 .cardlist{
     background: #82B1FF;
     border: 1px solid transparent;
@@ -28,11 +27,35 @@
 .newcard{
     color: #F5F5F5;
 }
-
 .newcard:hover{
     color: #0D47A1;
 }
-
 .cardarea{
    background: #fafafa;
+   width: 93%;
+   padding: 8px;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   border: 1px solid transparent;
+}
+.done{
+    display: inline-block;
+    border: 1px solid transparent;
+    background-color: green;
+    color: white;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+}
+.cancel{
+    display: inline;
+    border: 1px solid transparent;
+    background-color: red;
+    color: white;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+    margin-left: 10px;
 }

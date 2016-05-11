@@ -7,9 +7,11 @@ const addNewCard = (cardList: CardList) => {
     const newCardDiv = document.createElement('div')
 
     const cardarea = document.createElement('textarea')
+    cardarea.className = 'cardarea'
     cardarea.setAttribute('rows', '3')
 
     const done = document.createElement('button')
+    done.className = 'done'
     done.innerText = 'Done'
     done.onclick = (e) => {
         if (cardarea.value !== '') {
@@ -18,12 +20,24 @@ const addNewCard = (cardList: CardList) => {
 
         newCardDiv.removeChild(cardarea)
         newCardDiv.removeChild(done)
-
+        newCardDiv.removeChild(cancel)
         console.log(cardList)
     }
+    
+    const cancel = document.createElement('button')
+    cancel.className = 'cancel'
+    cancel.innerText = 'Cancel'
 
     newCardDiv.appendChild(cardarea)
     newCardDiv.appendChild(done)
+    newCardDiv.appendChild(cancel)
+    cancel.onclick = (e) => {
+        cardarea.value = ''
+        newCardDiv.removeChild(cardarea)
+        newCardDiv.removeChild(done)
+        newCardDiv.removeChild(cancel)
+        console.log(cardList)
+    }
 
     return newCardDiv
 }
@@ -40,7 +54,10 @@ const render = (cardList: CardList): HTMLElement => {
     const newcard = document.createElement('a')
     newcard.className = 'newcard'
     newcard.innerText = 'Add a new card'
-    newcard.onclick   = (e) => listContainer.appendChild(addNewCard(cardList))
+    newcard.onclick   = (e) => {
+        newcard.innerText = ''
+        listContainer.appendChild(addNewCard(cardList))
+    }
 
     listContainer.appendChild(listTitle)
     list.forEach(card => listContainer.appendChild(card))
