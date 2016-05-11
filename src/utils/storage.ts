@@ -24,7 +24,7 @@ const storage = {
         }
     },
 
-    readInstance(board: string){
+    readInstance(){
         if (storageAvailable()) {
             JSON.parse(window.localStorage.getItem('board'))
         }
