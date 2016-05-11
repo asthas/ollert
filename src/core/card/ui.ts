@@ -9,4 +9,10 @@ const render = (card: Card) => {
     return cardUi
 }
 
+export const addNewCard = (e) => {
+    const cardarea = document.createElement('textarea')
+    cardarea.setAttribute("rows", "3")
+    return cardarea
+}
+
 export default render

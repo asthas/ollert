@@ -25,3 +25,14 @@
     margin-bottom: 10px;
     padding: 8px;
 }
+.newcard{
+    color: #F5F5F5;
+}
+
+.newcard:hover{
+    color: #0D47A1;
+}
+
+.cardarea{
+   background: #fafafa;
+}

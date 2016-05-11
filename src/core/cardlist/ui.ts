@@ -2,6 +2,7 @@
 
 import CardList from './model'
 import renderCard from '../card/ui'
+import {addNewCard} from '../card/ui'
 
 const render = (cardList: CardList): HTMLElement => {
     const listContainer = document.createElement('div')
@@ -12,8 +13,15 @@ const render = (cardList: CardList): HTMLElement => {
 
     const list = cardList.cards.map(card => renderCard(card))
 
+    const newcard = document.createElement('a')
+    newcard.className = 'newcard'
+    newcard.onclick = addNewCard
+    newcard.innerHTML += '<p>Add a new card</p>'
+
     listContainer.appendChild(listTitle)
     list.forEach(card => listContainer.appendChild(card))
+
+    listContainer.appendChild(newcard)
 
     return listContainer
 }
