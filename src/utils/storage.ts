@@ -26,9 +26,10 @@ const storage = {
 
     readInstance(){
         if (storageAvailable()) {
-            JSON.parse(window.localStorage.getItem('board'))
+            return JSON.parse(window.localStorage.getItem('board'))
+        } else{
+            return null
         }
-        return null
     }
 }
 
