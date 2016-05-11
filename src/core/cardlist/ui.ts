@@ -2,6 +2,7 @@
 
 import CardList from './model'
 import renderCard from '../card/ui'
+import Events from '../../utils/events'
 
 const addNewCard = (cardList: CardList) => {
     const newCardDiv = document.createElement('div')
@@ -21,23 +22,24 @@ const addNewCard = (cardList: CardList) => {
         newCardDiv.removeChild(cardarea)
         newCardDiv.removeChild(done)
         newCardDiv.removeChild(cancel)
-        console.log(cardList)
+
+        Events.rerender()
     }
-    
+
     const cancel = document.createElement('button')
     cancel.className = 'cancel'
     cancel.innerText = 'Cancel'
+    cancel.onclick = (e) => {
+        newCardDiv.removeChild(cardarea)
+        newCardDiv.removeChild(done)
+        newCardDiv.removeChild(cancel)
+
+        Events.rerender()
+    }
 
     newCardDiv.appendChild(cardarea)
     newCardDiv.appendChild(done)
     newCardDiv.appendChild(cancel)
-    cancel.onclick = (e) => {
-        cardarea.value = ''
-        newCardDiv.removeChild(cardarea)
-        newCardDiv.removeChild(done)
-        newCardDiv.removeChild(cancel)
-        console.log(cardList)
-    }
 
     return newCardDiv
 }

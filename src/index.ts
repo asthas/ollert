@@ -3,4 +3,11 @@
 import board from './demo/board'
 import renderBoard from './core/board/ui'
 
-document.body.appendChild(renderBoard(board))
+let boardUi = renderBoard(board)
+document.body.appendChild(boardUi)
+
+document.body.addEventListener('rerender', (e) => {
+    document.body.removeChild(boardUi)
+    boardUi = renderBoard(board)
+    document.body.appendChild(boardUi)
+})
