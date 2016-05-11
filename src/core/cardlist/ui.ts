@@ -1,7 +1,6 @@
 'use strict'
 
 import CardList from './model'
-import Card from '../card/model'
 import renderCard from '../card/ui'
 
 const addNewCard = (cardList: CardList) => {
@@ -13,9 +12,14 @@ const addNewCard = (cardList: CardList) => {
     const done = document.createElement('button')
     done.innerText = 'Done'
     done.onclick = (e) => {
-        console.log(cardarea.value)
+        if (cardarea.value !== '') {
+            cardList.addCard(cardarea.value)
+        }
+
         newCardDiv.removeChild(cardarea)
         newCardDiv.removeChild(done)
+
+        console.log(cardList)
     }
 
     newCardDiv.appendChild(cardarea)
