@@ -60,3 +60,13 @@
     border-radius: 4px;
     margin-left: 10px;
 }
+.save{
+    display: inline-block;
+    border: 1px solid transparent;
+    background-color: green;
+    color: white;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+}

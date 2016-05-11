@@ -43,9 +43,7 @@ const addNewCard = (cardList: CardList) => {
 
     return newCardDiv
 }
-const editCard = (cardList: CardList) => {
-    
-}
+
 const render = (cardList: CardList): HTMLElement => {
     const listContainer = document.createElement('div')
     listContainer.className = 'cardlist'
