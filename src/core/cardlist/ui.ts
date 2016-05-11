@@ -1,8 +1,28 @@
 'use strict'
 
 import CardList from './model'
+import Card from '../card/model'
 import renderCard from '../card/ui'
-import {addNewCard} from '../card/ui'
+
+const addNewCard = (cardList: CardList) => {
+    const newCardDiv = document.createElement('div')
+
+    const cardarea = document.createElement('textarea')
+    cardarea.setAttribute('rows', '3')
+
+    const done = document.createElement('button')
+    done.innerText = 'Done'
+    done.onclick = (e) => {
+        console.log(cardarea.value)
+        newCardDiv.removeChild(cardarea)
+        newCardDiv.removeChild(done)
+    }
+
+    newCardDiv.appendChild(cardarea)
+    newCardDiv.appendChild(done)
+
+    return newCardDiv
+}
 
 const render = (cardList: CardList): HTMLElement => {
     const listContainer = document.createElement('div')
@@ -15,8 +35,8 @@ const render = (cardList: CardList): HTMLElement => {
 
     const newcard = document.createElement('a')
     newcard.className = 'newcard'
-    newcard.onclick = addNewCard
-    newcard.innerHTML += '<p>Add a new card</p>'
+    newcard.innerText = 'Add a new card'
+    newcard.onclick   = (e) => listContainer.appendChild(addNewCard(cardList))
 
     listContainer.appendChild(listTitle)
     list.forEach(card => listContainer.appendChild(card))
