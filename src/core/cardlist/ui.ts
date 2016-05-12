@@ -1,6 +1,7 @@
 'use strict'
 
 import CardList from './model'
+import Card from '../card/model'
 import renderCard from '../card/ui'
 import Events from '../../utils/events'
 
@@ -45,7 +46,10 @@ const addNewCard = (cardList: CardList) => {
 }
 
 const makeDraggable = (cardListUi: HTMLElement) => {
-    return window['Sortable'].create(cardListUi, { group: 'board' })
+    return window['Sortable'].create(cardListUi, {
+        group: 'board',
+        onEnd: () => Events.updateList()
+    })
 }
 
 const render = (cardList: CardList): HTMLElement => {
@@ -76,6 +80,13 @@ const render = (cardList: CardList): HTMLElement => {
     cardListUi.addEventListener('delCard', (e) => {
         const idToBeDeleted: string = e['id']
         CardList.removeCard(cardList, idToBeDeleted)
+        Events.rerender()
+    })
+
+    cardListUi.addEventListener('updateList', (e) => {
+        const cardUis = Array.prototype.slice.call(listContainer.childNodes) as HTMLElement[]
+        const cards = cardUis.map(cardUi => JSON.parse(cardUi.getAttribute('data')) as Card)
+        cardList.cards = cards
         Events.rerender()
     })
 

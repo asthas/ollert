@@ -8,6 +8,7 @@ const render = (card: Card) => {
     const cardUi = document.createElement('div')
     cardUi.className = 'card'
     cardUi.innerText += card.title
+    cardUi.setAttribute('data', JSON.stringify(card))
 
     const editicon = document.createElement('i')
     editicon.className = 'fa fa-pencil-square-o'

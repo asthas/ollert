@@ -14,6 +14,15 @@ const Events = {
             .slice.call(document.getElementsByClassName('cardlist')) as HTMLElement[]
 
         cardLists.forEach(cardList => cardList.dispatchEvent(event))
+    },
+
+    updateList() {
+        const event = new Event('updateList')
+
+        const cardLists = Array.prototype
+            .slice.call(document.getElementsByClassName('cardlist')) as HTMLElement[]
+
+        cardLists.forEach(cardList => cardList.dispatchEvent(event))
     }
 }
 
