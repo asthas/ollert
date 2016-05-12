@@ -44,9 +44,13 @@ const addNewCard = (cardList: CardList) => {
     return newCardDiv
 }
 
+const makeDraggable = (cardListUi: HTMLElement) => {
+    return window['Sortable'].create(cardListUi)
+}
+
 const render = (cardList: CardList): HTMLElement => {
-    const listContainer = document.createElement('div')
-    listContainer.className = 'cardlist'
+    const cardListUi = document.createElement('div')
+    cardListUi.className = 'cardlist'
 
     const listTitle = document.createElement('h4')
     listTitle.innerText = cardList.title
@@ -58,19 +62,24 @@ const render = (cardList: CardList): HTMLElement => {
     newcard.innerText = 'Add a new card'
     newcard.onclick   = (e) => {
         newcard.innerText = ''
-        listContainer.appendChild(addNewCard(cardList))
+        cardListUi.appendChild(addNewCard(cardList))
     }
 
-    listContainer.appendChild(listTitle)
-    list.forEach(card => listContainer.appendChild(card))
+    cardListUi.appendChild(listTitle)
 
-    listContainer.appendChild(newcard)
-    listContainer.addEventListener('delCard', (e) => {
+    const listContainer = document.createElement('div')
+    list.forEach(card => listContainer.appendChild(card))
+    cardListUi.appendChild(listContainer)
+    makeDraggable(listContainer)
+
+    cardListUi.appendChild(newcard)
+    cardListUi.addEventListener('delCard', (e) => {
         const idToBeDeleted: string = e['id']
         CardList.removeCard(cardList, idToBeDeleted)
         Events.rerender()
     })
-    return listContainer
+
+    return cardListUi
 }
 
 export default render
