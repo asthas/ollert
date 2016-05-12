@@ -1,16 +1,26 @@
 'use strict'
 
 import Card from './model'
-import Event from '../../utils/events';
+import Event from '../../utils/events'
 
 const render = (card: Card) => {
 
     const cardUi = document.createElement('div')
     cardUi.className = 'card'
     cardUi.innerText += card.title
-    cardUi.innerHTML += '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'
-    const icon = document.getElementsByClassName('fa-pencil-square-o')[0] as HTMLElement
-    icon.onclick = () => {
+
+    const editicon = document.createElement('i')
+    editicon.className = 'fa fa-pencil-square-o'
+    editicon.setAttribute('aria-hidden', 'true')
+
+    const delicon = document.createElement('i')
+    delicon.className = 'fa fa-trash-o'
+    delicon.setAttribute('aria-hidden', 'true')
+
+    cardUi.appendChild(editicon)
+    cardUi.appendChild(delicon)
+
+    editicon.onclick = () => {
         const editCard = document.createElement('div')
         const cardarea = document.createElement('textarea')
         cardarea.className = 'cardarea'
@@ -26,6 +36,10 @@ const render = (card: Card) => {
             card.title = cardarea.value
             Event.rerender()
         }
+    }
+
+    delicon.onclick = () => {
+        
     }
 
     return cardUi

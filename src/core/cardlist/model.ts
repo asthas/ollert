@@ -20,7 +20,7 @@ class CardList {
 
     addCard(title: string, owner?: User) {
         owner = owner ? owner : defaultUser
-        const card = new Card(title, owner, this.cards.length)
+        const card = new Card(title, owner)
         this.cards.push(card)
     }
 }
