@@ -58,6 +58,11 @@ const render = (cardList: CardList): HTMLElement => {
 
     const listTitle = document.createElement('h4')
     listTitle.innerText = cardList.title
+    listTitle.className = 'listTitle'
+
+    listTitle.onclick = () => {
+        listTitle.contentEditable = 'true'
+    }
 
     const list = cardList.cards.map(card => renderCard(card))
 
