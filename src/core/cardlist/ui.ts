@@ -45,7 +45,7 @@ const addNewCard = (cardList: CardList) => {
 }
 
 const makeDraggable = (cardListUi: HTMLElement) => {
-    return window['Sortable'].create(cardListUi)
+    return window['Sortable'].create(cardListUi, { group: 'board' })
 }
 
 const render = (cardList: CardList): HTMLElement => {
