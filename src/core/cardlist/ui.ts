@@ -60,6 +60,11 @@ const render = (cardList: CardList): HTMLElement => {
     listTitle.innerText = cardList.title
     listTitle.className = 'listTitle'
 
+    listTitle.onkeyup = () => {
+        cardList.title = listTitle.innerText
+        Events.save()
+    }
+
     listTitle.onclick = () => {
         listTitle.contentEditable = 'true'
     }

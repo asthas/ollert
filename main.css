@@ -102,3 +102,9 @@
     font-size: 32px;
     margin: 10px 0;
 }
+::selection {
+  background: #ffb7b7;
+}
+::-moz-selection {
+  background: #ffb7b7;
+}

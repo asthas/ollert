@@ -6,6 +6,11 @@ const Events = {
         document.body.dispatchEvent(event)
     },
 
+    save() {
+        const event = new Event('save')
+        document.body.dispatchEvent(event)
+    },
+
     delCard(id: string) {
         const event = new Event('delCard')
         event['id'] = id

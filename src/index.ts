@@ -15,3 +15,5 @@ document.body.addEventListener('rerender', (e) => {
     document.body.appendChild(boardUi)
     storage.saveInstance(board)
 })
+
+document.body.addEventListener('save', (e) => storage.saveInstance(board))
