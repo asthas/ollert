@@ -103,9 +103,10 @@
 .fixed-nav-bar p{
     color: white;
     text-align: center;
-    font-weight: bold;
     font-size: 32px;
     margin: 10px 0;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
 }
 ::selection {
   background: #ffb7b7;
