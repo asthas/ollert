@@ -23,6 +23,10 @@ class CardList {
         const card = new Card(title, owner)
         this.cards.push(card)
     }
+
+    removeCard(id: string) {
+        this.cards = this.cards.filter(card => card.id !== id)
+    }
 }
 
 export default CardList

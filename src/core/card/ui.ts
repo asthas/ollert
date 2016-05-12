@@ -38,9 +38,7 @@ const render = (card: Card) => {
         }
     }
 
-    delicon.onclick = () => {
-        
-    }
+    delicon.onclick = () => Event.delCard(card.id)
 
     return cardUi
 }

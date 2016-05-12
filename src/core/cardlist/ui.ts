@@ -65,7 +65,11 @@ const render = (cardList: CardList): HTMLElement => {
     list.forEach(card => listContainer.appendChild(card))
 
     listContainer.appendChild(newcard)
-
+    listContainer.addEventListener('delCard', (e) => {
+        const idToBeDeleted: string = e['id']
+        cardList.removeCard(idToBeDeleted)
+        Events.rerender()
+    })
     return listContainer
 }
 
