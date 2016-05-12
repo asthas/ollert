@@ -22,6 +22,10 @@ const render = (board: Board) => {
 
     boardUi.appendChild(addNewList)
 
+    boardUi.addEventListener('delList', (e) => {
+        board.cardLists = board.cardLists.filter(cardList => cardList.id !== e['id'])
+        Events.rerender()
+    })
 
     return boardUi
 }

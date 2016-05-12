@@ -28,6 +28,14 @@ const Events = {
             .slice.call(document.getElementsByClassName('cardlist')) as HTMLElement[]
 
         cardLists.forEach(cardList => cardList.dispatchEvent(event))
+    },
+
+    delList(id: string) {
+        const event = new Event('delList')
+        event['id'] = id
+
+        const boardUi = document.getElementById('board')
+        boardUi.dispatchEvent(event)
     }
 }
 

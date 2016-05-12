@@ -60,6 +60,10 @@ const render = (cardList: CardList): HTMLElement => {
     i.className = 'fa fa-trash-o listDel'
     cardListUi.appendChild(i)
 
+    i.onclick = () => {
+        Events.delList(cardList.id)
+    }
+
     const listTitle = document.createElement('h4')
     listTitle.innerText = cardList.title
     listTitle.className = 'listTitle'
