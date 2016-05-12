@@ -56,6 +56,10 @@ const render = (cardList: CardList): HTMLElement => {
     const cardListUi = document.createElement('div')
     cardListUi.className = 'cardlist'
 
+    const i = document.createElement('i')
+    i.className = 'fa fa-trash-o listDel'
+    cardListUi.appendChild(i)
+
     const listTitle = document.createElement('h4')
     listTitle.innerText = cardList.title
     listTitle.className = 'listTitle'
