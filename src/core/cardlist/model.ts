@@ -18,14 +18,14 @@ class CardList {
         this.cards = cards ? cards : []
     }
 
-    addCard(title: string, owner?: User) {
+    static addCard(cardList: CardList, title: string, owner?: User) {
         owner = owner ? owner : defaultUser
         const card = new Card(title, owner)
-        this.cards.push(card)
+        cardList.cards.push(card)
     }
 
-    removeCard(id: string) {
-        this.cards = this.cards.filter(card => card.id !== id)
+    static removeCard(cardList: CardList, id: string) {
+        cardList.cards = cardList.cards.filter(card => card.id !== id)
     }
 }
 

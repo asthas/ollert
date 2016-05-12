@@ -16,7 +16,7 @@ const addNewCard = (cardList: CardList) => {
     done.innerText = 'Done'
     done.onclick = (e) => {
         if (cardarea.value !== '') {
-            cardList.addCard(cardarea.value)
+            CardList.addCard(cardList, cardarea.value)
         }
 
         newCardDiv.removeChild(cardarea)
@@ -67,7 +67,7 @@ const render = (cardList: CardList): HTMLElement => {
     listContainer.appendChild(newcard)
     listContainer.addEventListener('delCard', (e) => {
         const idToBeDeleted: string = e['id']
-        cardList.removeCard(idToBeDeleted)
+        CardList.removeCard(cardList, idToBeDeleted)
         Events.rerender()
     })
     return listContainer
