@@ -4,13 +4,16 @@ import Board from './model'
 import renderList from '../cardlist/ui'
 import CardList from '../cardlist/model'
 import Events from '../../utils/events'
+import Sortable from '../../utils/globals'
 
 const render = (board: Board) => {
     const boardUi = document.createElement('div')
     boardUi.id = 'board'
-
+    const listContainer = document.createElement('div')
     const lists = board.cardLists.map(cardList => renderList(cardList))
-    lists.forEach(list => boardUi.appendChild(list))
+    lists.forEach(list => listContainer.appendChild(list))
+    Sortable.create(listContainer)
+    boardUi.appendChild(listContainer)
 
     const addNewList = document.createElement('div')
     addNewList.innerText = 'Add a list...'

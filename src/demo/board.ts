@@ -18,6 +18,6 @@ const card33 = new Card('test-title-33', sakshi)
 
 const cardList1 = new CardList('My One List', [card1, card2, card3])
 const cardList2 = new CardList('My Second List', [card11, card22, card33])
-const board = new Board([cardList1, cardList2])
+const board = new Board([cardList1, cardList2], [astha, sakshi])
 
 export default board
