@@ -5,10 +5,12 @@ import renderList from '../cardlist/ui'
 import CardList from '../cardlist/model'
 import Events from '../../utils/events'
 import Sortable from '../../utils/globals'
+import renderModal from '../user/ui'
 
 const render = (board: Board) => {
     const boardUi = document.createElement('div')
     boardUi.id = 'board'
+    boardUi.appendChild(renderModal(board.users))
     const listContainer = document.createElement('div')
     const lists = board.cardLists.map(cardList => renderList(cardList))
     lists.forEach(list => listContainer.appendChild(list))
