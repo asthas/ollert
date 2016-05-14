@@ -10,14 +10,17 @@ const render = (users: User[]) => {
     modalContent.className = 'modal-content'
     const modalHeader = document.createElement('div')
     modalHeader.className = 'modal-header'
+    modalHeader.innerHTML = '<h2>Select User</h2>'
     var cross = document.createElement('span')
     cross.className = 'close'
     cross.innerText = 'x'
     modalHeader.appendChild(cross)
     var modalBody = document.createElement('div')
     modalBody.className = 'modal-body'
+    modalBody.innerText = 'Select the available users'
     var modalFooter = document.createElement('modalFooter')
     modalFooter.className = 'modal-footer'
+    modalFooter.innerText = "Great Selection!"
 
     modalContent.appendChild(modalHeader)
     modalContent.appendChild(modalBody)

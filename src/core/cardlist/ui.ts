@@ -4,7 +4,7 @@ import CardList from './model'
 import Card from '../card/model'
 import renderCard from '../card/ui'
 import Events from '../../utils/events'
-import Sortable from '../../utils/globals'
+import {Sortable} from '../../utils/globals'
 
 const addNewCard = (cardList: CardList) => {
     const newCardDiv = document.createElement('div')
@@ -47,7 +47,7 @@ const addNewCard = (cardList: CardList) => {
 }
 
 const makeDraggable = (cardListUi: HTMLElement) => {
-    return window['Sortable'].create(cardListUi, {
+    return Sortable.create(cardListUi, {
         group: 'board',
         onEnd: () => Events.updateList()
     })

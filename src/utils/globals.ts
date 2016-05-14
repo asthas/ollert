@@ -5,5 +5,3 @@ interface Sortable{
 }
 
 export const Sortable = window['Sortable'] as Sortable
-
-export default Sortable

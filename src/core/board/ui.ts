@@ -4,7 +4,7 @@ import Board from './model'
 import renderList from '../cardlist/ui'
 import CardList from '../cardlist/model'
 import Events from '../../utils/events'
-import Sortable from '../../utils/globals'
+import {Sortable} from '../../utils/globals'
 import renderModal from '../user/ui'
 
 const render = (board: Board) => {
